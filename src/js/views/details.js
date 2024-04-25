@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import noImage from "../../img/big-placeholder.jpg";
-import "../../styles/details.css";
+// import noImage from "../../img/big-placeholder.jpg";
+// import "../../styles/details.css";
 import { Context } from "../store/appContext";
 import { object } from "prop-types";
 
@@ -38,7 +38,7 @@ export const Details = () => {
         <div className="container border border-info border-opacity-25 rounded-4 py-2 px-2" style={{ width: "90vw" }}>
             <div className="row">
                 <div className="col-6">
-                    <img src={noImage} alt={`an image of ${state.store.details?.description || "nothing, nothing selected"}`} style={{ width: "100%" }} className="rounded-4" />
+                    {/* <img src={noImage} alt={`an image of ${state.store.details?.description || "nothing, nothing selected"}`} style={{ width: "100%" }} className="rounded-4" /> */}
                 </div>
                 <div className="col-6">
                     <div className="card-body text-wrap">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import noImage from "../../img/big-placeholder.jpg";
+// import noImage from "../../img/big-placeholder.jpg"; 
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 
@@ -48,7 +48,7 @@ export const Home = () => {
 
                                             return (
                                                 <div className="card mb-3 me-4" style={{ width: "18rem" }} key={place}>
-                                                    <img src={noImage} alt={`an image of ${details.description}`} />
+                                                    {/* <img src={noImage} alt={`an image of ${details.description}`} /> */}
                                                     <div className="card-body text-wrap d-flex flex-column">
                                                         <h5 className="card-title">{details.properties?.name || ""}</h5>
                                                         <p className="card-text m-0">{type === "planets" ? "" : state.actions.prepareKey(Object.entries(details.properties)[2])}</p>

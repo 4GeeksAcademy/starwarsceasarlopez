@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../img/star-wars-logo.png";
+//import logo from "../../img/star-wars-logo.png";
 import { Context } from "../store/appContext"
 
 export const Navbar = () => {
@@ -15,7 +15,7 @@ export const Navbar = () => {
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-			<img src={logo} alt="SW logo" className="mx-4" style={{height: "3vw", width: "auto"}}/>
+			{/* <img src={logo} alt="SW logo" className="mx-4" style={{height: "3vw", width: "auto"}}/> */}
 			</Link>
 			<div className="ml-auto">
 				<Link to="/demo">
