@@ -48,7 +48,11 @@ export const Home = () => {
 
                                             return (
                                                 <div className="card mb-3 me-4" style={{ width: "18rem" }} key={place}>
-                                                    {/* <img src={noImage} alt={`an image of ${details.description}`} /> */}
+                                                    {<img 
+                                                        src={`https://starwars-visualguide.com/assets/img/${type==="people"?"characters":type}/${uid}.jpg`} 
+                                                        alt={`an image of ${details.description}`} 
+                                                        onError={(e)=>{e.target.onError=null; e.target.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"}}
+                                                    />}
                                                     <div className="card-body text-wrap d-flex flex-column">
                                                         <h5 className="card-title">{details.properties?.name || ""}</h5>
                                                         <p className="card-text m-0">{type === "planets" ? "" : state.actions.prepareKey(Object.entries(details.properties)[2])}</p>
@@ -57,8 +61,6 @@ export const Home = () => {
                                                         <p className="card-text m-0">{state.actions.prepareKey(Object.entries(details.properties || {}).length > 4 ? Object.entries(details.properties)[4] : ["--", "--"])}</p>
                                                         <p className="card-text m-0">{state.actions.prepareKey(Object.entries(details.properties || {}).length > 6 ? Object.entries(details.properties)[6] : ["--", "--"])}</p>
                                                         <div className="container d-flex justify-content-between p-0 pt-3 mt-auto" style={{ position: "relative", bottom: "1vw" }}>
-                                                            <Link to={`/details/${details.properties?.name}`} className="btn btn-outline-primary" onClick={() => state.actions.set_getDetails(details.properties)}>Learn more!</Link>
-                                                            <button type="button" className="btn btn-outline-warning"><i className="fa-regular fa-heart"></i></button>
                                                             <Link to={`/details/${details.properties?.name}`} className="btn btn-outline-primary" onClick={() => state.actions.set_getDetails({ ...details.properties, type: type, uid: uid })}>Learn more!</Link>
                                                             <button type="button" className="btn btn-outline-warning" onClick={() => state.actions.set_get_deleteFavorites("add", { ...details.properties, type: type, uid: uid })}><i className="fa-regular fa-heart"></i></button>
                                                         </div>

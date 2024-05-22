@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-//import logo from "../../img/star-wars-logo.png";
 import { Context } from "../store/appContext"
 
 export const Navbar = () => {

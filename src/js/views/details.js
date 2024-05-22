@@ -8,13 +8,13 @@ import { object } from "prop-types";
 export const Details = () => {
     let state = useContext(Context);
 
-    useEffect(() => {
-        const details = state.actions.set_getDetails();
+    //useEffect(() => {
+        let details = {...state.actions.set_getDetails()};
         console.log(`details: using state.store.details, this in it now: `);
         console.log(state.store.details);
         console.log(`${type}/${uid}`);
 
-        let updatedDetails = { ...details };
+        let updatedDetails = {...state.actions.set_getDetails()};
         const type = updatedDetails.type;
         const uid = updatedDetails.uid;
         delete updatedDetails.uid;
@@ -32,13 +32,18 @@ export const Details = () => {
         console.log(`details: theese are the details after treatment: `);
         console.log(updatedDetails);
         console.log(`${type}/${uid}`);
-    }, []);
+   // }, []);
 
     return (
         <div className="container border border-info border-opacity-25 rounded-4 py-2 px-2" style={{ width: "90vw" }}>
             <div className="row">
                 <div className="col-6">
-                    {/* <img src={noImage} alt={`an image of ${state.store.details?.description || "nothing, nothing selected"}`} style={{ width: "100%" }} className="rounded-4" /> */}
+                     <img src={`https://starwars-visualguide.com/assets/img/${type === "people" ? "characters" : type}/${uid}.jpg`}
+						onError={(e) => { e.target.onerror = null; e.target.src = noImage; }}
+						alt = {`an image of${state.store.details?.description}`}
+						className="img-fluid rounded-start"
+						style={{Width: "50%"}}
+					 /> 
                 </div>
                 <div className="col-6">
                     <div className="card-body text-wrap">
